@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LensArt - Styles and Animations</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="header">
+  <div class="header-inner">
+    <div class="header-text">
+      <h1>LensArt</h1>
+      <p class="tagline">Professional Photo Editing Studio</p>
+      <p class="sub">
+        Inside the studio &ndash; live clock, changing backdrops and our photography course.<br>
+        Open Monday to Saturday, 9 AM to 7 PM.
+      </p>
+      <a href="#clock" class="cta-btn">Studio Time</a>
+      <a href="#students" class="cta-outline">Our Students</a>
+    </div>
+    <div class="header-img"><img src="photo-hero.jpg" alt="Before and after landscape edit"></div>
+  </div>
+</div>
+
+<div class="nav">
+  <a href="#clock">Studio Clock</a>
+  <a href="#backdrop">Backdrop</a>
+  <a href="#zoom">Zoom Text</a>
+  <a href="#camera">Moving Camera</a>
+  <a href="#students">Students</a>
+</div>
+
+<div class="container">
+
+  <!-- 1. Digital clock -->
+  <div class="section" id="clock">
+    <h2 class="section-title">Digital Clock!</h2>
+    <p class="section-sub">Current studio time, updated every second</p>
+    <div class="row">
+      <div class="panel clock-panel">
+        <span id="time"></span>
+        <p id="today"></p>
+      </div>
+      <div class="panel">
+        <h3>Studio Hours</h3>
+        <table class="price-table">
+          <tr><th>Day</th><th>Timing</th></tr>
+          <tr><td>Monday &ndash; Friday</td><td>9:00 AM &ndash; 7:00 PM</td></tr>
+          <tr><td>Saturday</td><td>10:00 AM &ndash; 4:00 PM</td></tr>
+          <tr><td>Sunday</td><td>Closed</td></tr>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2. Background colour change -->
+  <div class="section" id="backdrop">
+    <h2 class="section-title">Dynamic Background!</h2>
+    <p class="section-sub">The studio backdrop changes to a random colour every 30 seconds</p>
+    <div id="backdrop-box">
+      <div class="backdrop-label">
+        <p class="backdrop-name">LensArt Studio Backdrop</p>
+        <p id="color-name"></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3. Font size on mouse over / out -->
+  <div class="section" id="zoom">
+    <h2 class="section-title">Change font size!</h2>
+    <p class="section-sub">Move the cursor over the paragraph to zoom in</p>
+    <div class="panel">
+      <h3>Color Grading</h3>
+      <p id="para1" onmouseover="incSize()" onmouseout="decSize()">
+        Cinematic tones and mood correction for portraits, travel and wedding photography &ndash;
+        move cursor over me to zoom in...
+      </p>
+    </div>
+  </div>
+
+  <!-- 4. Move and stop image -->
+  <div class="section" id="camera">
+    <h2 class="section-title">Moving Camera</h2>
+    <p class="section-sub">Click Move to slide the camera along the film strip, Stop to bring it back</p>
+    <div id="track">
+      <img id="img" src="camera.png" alt="Camera" width="120">
+    </div>
+    <div class="controls">
+      <button class="btn" onclick="moveRight();">Move</button>
+      <button class="btn btn-outline" onclick="stop();">Stop</button>
+    </div>
+  </div>
+
+  <!-- 5. Array of student objects -->
+  <div class="section" id="students">
+    <h2 class="section-title">LensArt Photography Course</h2>
+    <p class="section-sub">Student details displayed from an array of objects</p>
+    <div class="row">
+      <div class="panel">
+        <h3>Register Numbers</h3>
+        <div id="student-list"></div>
+      </div>
+      <div class="panel">
+        <h3>Born before 2000</h3>
+        <ul id="before2000"></ul>
+      </div>
+      <div class="panel">
+        <h3>Born in or after 2000</h3>
+        <ul id="after2000"></ul>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div class="footer">
+  <p>&copy; 2026 LensArt Photo Editing Studio &mdash; All Rights Reserved</p>
+  <p>Coimbatore, Tamil Nadu &bull; Lokeshraj M &bull; URK24CS1276</p>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
